@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    color: #848488
+}
+
+
+.cell {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid #d7d9df;
+    height: 40px;
+    text-align: center;
+}
+
+.table__wrapper {
+    width: 100%;
+}
+
+.table__header {
+    background-color: #f9fafc;
+    font-weight: bold;
+    color: #6b6767;
+}
+
+@media screen and (max-width: 999px) {
+    .table__wrapper {
+        overflow: scroll;
+    }
+    .cell {
+      min-width: 200px; /* Set the background color to blue for screens < 1000px */
+    }
+  }

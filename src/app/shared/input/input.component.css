@@ -1,0 +1,28 @@
+.input__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: flex-start;
+}
+
+.input__title {
+    color: #0F265C;
+}
+
+.input__error-message {
+    color: #e67373;
+    font-weight:lighter;
+    font-size: 14px;
+}
+
+.input__input-target {
+    box-shadow: none;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 17px;
+    padding: 8px;
+    outline:none;
+}
+

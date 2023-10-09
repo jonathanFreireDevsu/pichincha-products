@@ -1,0 +1,32 @@
+<!-- src/app/table/table.component.html -->
+<div class="table__wrapper">
+    <table>
+        <thead>
+        <tr class="table__header">
+            <th class="cell">ID</th>
+            <th class="cell">Name</th>
+            <th class="cell">Age</th>
+            <th class="cell">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data.slice((currentPage - 1) * pageSize, currentPage * pageSize)">
+            <td class="cell">{{ item.id }}</td>
+            <td class="cell">{{ item.name }}</td>
+            <td class="cell">{{ item.age }}</td>
+            <td class="cell">{{ item.email }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="wrapper-space-between">
+        <span class="text"> 5 Resultados</span>
+        <div class="custom-selector">
+            <div class="table__pagination-selector flexbox flexbox-center">4 <img src="assets/row.svg" alt="Description of the SVG" /> </div>
+            <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
+          </div>
+    </div>
+</div>
