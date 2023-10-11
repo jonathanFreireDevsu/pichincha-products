@@ -1,0 +1,80 @@
+<div class="card form__card">
+    <div class="form__title">
+        <h1>Formulario de {{type === 'add' ? 'Registro' : 'Actualización'}}</h1>
+        <hr />
+    </div>
+    <div class="form__wrapper-inputs">
+        <div class="form__wrapper-input">
+            <app-input
+                id="id"
+                (notify)="handleValueChange($event)"
+                [title]="formData.id.name" 
+                [placeHolder]="formData.id.placeHolder"
+                [errorMessage]="formData.id.errorMessage"
+                [value]="formData.id.value"
+                type="text"
+                [disabled]="!(type === 'add')"
+            />
+        </div>
+        <div class="form__wrapper-input">
+            <app-input
+                id="name"
+                (notify)="handleValueChange($event)"
+                [title]="formData.name.name" 
+                [placeHolder]="formData.name.placeHolder"
+                [errorMessage]="formData.name.errorMessage"
+                [value]="formData.name.value"
+                type="text"
+            />
+        </div>
+        <div class="form__wrapper-input">
+            <app-input
+                id="description"
+                (notify)="handleValueChange($event)"
+                [title]="formData.description.name" 
+                [placeHolder]="formData.description.placeHolder"
+                [errorMessage]="formData.description.errorMessage"
+                [value]="formData.description.value"
+                type="text"
+            />
+        </div>
+        <div class="form__wrapper-input">
+            <app-input
+                id="logo"
+                (notify)="handleValueChange($event)"
+                [title]="formData.logo.name" 
+                [placeHolder]="formData.logo.placeHolder"
+                [errorMessage]="formData.logo.errorMessage"
+                [value]="formData.logo.value"
+                type="text"
+            />
+        </div>
+        <div class="form__wrapper-input">
+            <app-input
+                id="freeDate"
+                (notify)="handleValueChange($event)"
+                [title]="formData.freeDate.name" 
+                [placeHolder]="formData.freeDate.placeHolder"
+                [errorMessage]="formData.freeDate.errorMessage"
+                [value]="formData.freeDate.value"
+                type="date"
+            />
+        </div>
+        <div class="form__wrapper-input">
+            <app-input
+                id="revisionDate"
+                (notify)="handleValueChange($event)"
+                [title]="formData.revisionDate.name" 
+                [placeHolder]="formData.revisionDate.placeHolder"
+                [errorMessage]="formData.revisionDate.errorMessage"
+                [value]="formData.revisionDate.value"
+                disabled="true"
+                type="date"
+            />
+        </div>
+    </div>
+    <div class="form__wrapper-buttons">
+        <button (click)="onClean()" class="button-secondary"> Reiniciar </button>
+        <button (click)="onSend()" class="button-primary"> Enviar </button>
+    </div>
+</div>

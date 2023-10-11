@@ -1,0 +1,18 @@
+.message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+
+.message-success {
+  background: #37da45;
+}
+
+.message-error {
+  background: #e0314f;
+
+}

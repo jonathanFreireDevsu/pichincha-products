@@ -1,0 +1,14 @@
+<div class="card main__card">
+    <div class="wrapper-space-between">
+        <div class="main__search-wrapper">
+            <app-input
+                placeHolder="Buscar"
+                (notify)="handleChangeInput($event)"
+            />
+        </div>
+        <button (click)="addProduct()" class="button-primary"> Agregar </button>
+    </div>
+    <app-table
+        [data]="filteredData"
+    />
+</div>

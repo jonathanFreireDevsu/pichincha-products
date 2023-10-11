@@ -40,6 +40,7 @@ body {
     min-width: 120px;
     box-sizing: border-box;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .button-secondary {
@@ -58,11 +59,12 @@ body {
     min-width: 120px;
     box-sizing: border-box;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .card {
-    margin: 48px 10px;
-    padding: 32px;
+    margin: 48px 0px;
+    padding: 10px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(7, 7, 7, 0.16), 0px 8px 8px -8px rgba(7, 7, 7, 0.16);
     border-radius: 8px;
@@ -70,32 +72,36 @@ body {
 
 
 .custom-selector {
-position: relative;
-display: inline-block;
-background-color: #ececec;
-color: #464444;
-padding: 8px 12px;
-border-radius: 4px;
-cursor: pointer;
-user-select: none;
+    position: relative;
+    display: inline-block;
+    background-color: #f5f2f2;
+    color: #6d6a6a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
 }
 
+.dropdown-content {
+    z-index: 2;
+    min-width: 130px;
+}
 .custom-selector .dropdown-content {
-position: absolute;
-top: 100%;
-left: 0;
-background-color: #fff;
-border: 1px solid #ccc;
-border-radius: 4px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 .custom-selector:hover .dropdown-content {
 display: block;
 }
 
-.custom-selector .dropdown-content a {
+.custom-selector .dropdown-content span {
 display: block;
 padding: 8px 12px;
 text-decoration: none;
@@ -113,5 +119,13 @@ transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 5px;
+}
+
+.mt-1 {
+    width: 8px;
+}
+
+.mt-2 {
+    width: 20px;
 }

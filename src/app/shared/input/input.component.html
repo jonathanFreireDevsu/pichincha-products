@@ -1,7 +1,11 @@
 <div class="input__container no-space">
     <div *ngIf='title' class="input__title">{{title}}</div>
     <input
+        [ngModel]="value"
+        (ngModelChange)="handleChange($event)"
+        [type]="type"
         class="input__input-target"
+        [disabled]="disabled"
         [placeholder]='placeHolder'
         [ngStyle]="{borderColor: errorMessage ? '#e67373' : '#c8c8c8'}"
     />

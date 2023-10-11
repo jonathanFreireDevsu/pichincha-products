@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,7 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  title = '';
-  placeHolder = 'Search';
-  errorMessage = '';
+  @Input() title: string | undefined;
+  @Input() placeHolder: string | undefined;
+  @Input() errorMessage: string | undefined;
+  @Input() value: string | undefined;
+  @Input() disabled: boolean | string = false;
+  @Input() type: 'text' | 'date' | undefined = undefined;
+  @Input() id: 'id' | 'name' | 'logo' | 'description' | 'freeDate' | 'revisionDate' = 'id';
+
+  @Output() notify: EventEmitter<any> = new EventEmitter<any>();
+  
+  handleChange(value: any) {
+    this.notify.emit({id: this.id, value})
+  }
 }

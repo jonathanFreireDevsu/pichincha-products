@@ -16,6 +16,10 @@
     width: 220px;
 }
 
-.app__search-wrapper {
-    width: 220px;
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

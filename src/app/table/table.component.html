@@ -1,32 +1,53 @@
-<!-- src/app/table/table.component.html -->
 <div class="table__wrapper">
     <table>
         <thead>
         <tr class="table__header">
-            <th class="cell">ID</th>
-            <th class="cell">Name</th>
-            <th class="cell">Age</th>
-            <th class="cell">Email</th>
+            <th class="cell">Logo</th>
+            <th class="cell">Nombre del producto</th>
+            <th class="cell">Descripción</th>
+            <th class="cell">Fecha de liberación</th>
+            <th class="cell">Fecha de reestructuración</th>
+            <th class="cell"></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let item of data.slice((currentPage - 1) * pageSize, currentPage * pageSize)">
-            <td class="cell">{{ item.id }}</td>
+            <td class="cell"><img class='center-block img-responsive'
+                [style.width.px]='50'
+                [style.max-height.px]='50'
+                [style.margin.px]='2'
+                [src]='item.logo'
+                alt="LOGO"
+                [title]='item.name'
+            >
+            </td>
             <td class="cell">{{ item.name }}</td>
-            <td class="cell">{{ item.age }}</td>
-            <td class="cell">{{ item.email }}</td>
+            <td class="cell">{{ item.description }}</td>
+            <td class="cell">{{ item.date_release | dateFormat}}</td>
+            <td class="cell">{{ item.date_revision | dateFormat }}</td>
+            <td class="cell">
+                <div class="custom-selector">
+                    <div class="table__pagination-selector flexbox flexbox-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                          </svg>
+                    </div>
+                    <div class="dropdown-content">
+                      <span (click)="handleCallEdit(item)"> Actualizar item </span>
+                      <span (click)="handleModal(item.id, item.name)"> Eliminar item </span>
+                    </div>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
     <div class="wrapper-space-between">
-        <span class="text"> 5 Resultados</span>
+        <div class="text"> {{data.length}} Resultados</div>
         <div class="custom-selector">
-            <div class="table__pagination-selector flexbox flexbox-center">4 <img src="assets/row.svg" alt="Description of the SVG" /> </div>
+            <div class="table__pagination-selector flexbox flexbox-center">{{currentPage}} <div class="mt-1"></div><img src="assets/row.svg" /> </div>
             <div class="dropdown-content">
-              <a href="#">Option 1</a>
-              <a href="#">Option 2</a>
-              <a href="#">Option 3</a>
+              <span (click)="onPageChange(item)" *ngFor="let item of pageList">{{ item }}</span>
             </div>
-          </div>
+        </div>
     </div>
 </div>

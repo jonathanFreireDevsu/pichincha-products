@@ -9,7 +9,7 @@ table {
     margin: 0px;
     padding: 0px;
     border-bottom: 1px solid #d7d9df;
-    height: 40px;
+    height: 50px;
     text-align: center;
 }
 
@@ -25,9 +25,10 @@ table {
 
 @media screen and (max-width: 999px) {
     .table__wrapper {
+        width: 80vw;
         overflow: scroll;
     }
     .cell {
-      min-width: 200px; /* Set the background color to blue for screens < 1000px */
+      min-width: 150px;
     }
   }
